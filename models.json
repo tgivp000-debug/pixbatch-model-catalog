@@ -1,0 +1,500 @@
+{
+  "schema_version": 1,
+  "catalog_version": 1,
+  "updated_at": "2026-10-19",
+  "product": "PixBatch",
+  "channel": "stable",
+  "providers": [
+    {
+      "id": "apiyi_openai_compatible",
+      "label": "APIYi",
+      "base_url": "https://api.apiyi.com/v1",
+      "default_model": "gpt-image-2.5-vip",
+      "models": [
+        {
+          "id": "gpt-image-2.5-all",
+          "label": "gpt-image-2.5-all",
+          "status": "active",
+          "adapter": "apiyi_all_prompt_v1",
+          "size_control": "prompt",
+          "supports_quality": false,
+          "omitted_fields": [
+            "size",
+            "quality",
+            "n",
+            "aspect_ratio"
+          ],
+          "size_presets": [
+            {
+              "id": "1024x1024",
+              "prompt_prefix": "1:1 方形构图",
+              "label": "方形 1:1 · 自适应（不保证像素尺寸）",
+              "expected_width": 1024,
+              "expected_height": 1024,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "1672x941",
+              "prompt_prefix": "横版 16:9",
+              "label": "横版 16:9 · 约 1672×941",
+              "expected_width": 1672,
+              "expected_height": 941,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "941x1672",
+              "prompt_prefix": "竖屏 9:16",
+              "label": "竖屏 9:16 · 约 941×1672",
+              "expected_width": 941,
+              "expected_height": 1672,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "1448x1086",
+              "prompt_prefix": "4:3",
+              "label": "横版 4:3 · 约 1448×1086",
+              "expected_width": 1448,
+              "expected_height": 1086,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "1086x1448",
+              "prompt_prefix": "3:4",
+              "label": "竖版 3:4 · 约 1086×1448",
+              "expected_width": 1086,
+              "expected_height": 1448,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "1536x1024",
+              "prompt_prefix": "3:2 尺寸",
+              "label": "横版 3:2 · 约 1536×1024",
+              "expected_width": 1536,
+              "expected_height": 1024,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "1024x1536",
+              "prompt_prefix": "2:3 尺寸",
+              "label": "竖版 2:3 · 约 1024×1536",
+              "expected_width": 1024,
+              "expected_height": 1536,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "793x1983",
+              "prompt_prefix": "2:5 竖屏",
+              "label": "竖屏 2:5 · 约 793×1983",
+              "expected_width": 793,
+              "expected_height": 1983,
+              "exact_dimensions_guaranteed": false
+            },
+            {
+              "id": "1983x793",
+              "prompt_prefix": "5:2 横屏",
+              "label": "横屏 5:2 · 约 1983×793",
+              "expected_width": 1983,
+              "expected_height": 793,
+              "exact_dimensions_guaranteed": false
+            }
+          ],
+          "documentation": "https://docs.apiyi.com/api-capabilities/gpt-image-2-all/overview"
+        },
+        {
+          "id": "gpt-image-2-vip",
+          "label": "gpt-image-2-vip",
+          "status": "active",
+          "adapter": "apiyi_vip_size_v1",
+          "size_control": "size",
+          "supports_quality": false,
+          "omitted_fields": [
+            "quality",
+            "n"
+          ],
+          "legacy_default_size": "1024x1024",
+          "size_presets": [
+            {
+              "tier": "1K",
+              "aspect_ratio": "1:1",
+              "width": 1280,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "2:3",
+              "width": 848,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "3:2",
+              "width": 1280,
+              "height": 848
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "3:4",
+              "width": 960,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "4:3",
+              "width": 1280,
+              "height": 960
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "4:5",
+              "width": 1024,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "5:4",
+              "width": 1280,
+              "height": 1024
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "9:16",
+              "width": 720,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "16:9",
+              "width": 1280,
+              "height": 720
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "21:9",
+              "width": 1280,
+              "height": 544
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "1:1",
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "2:3",
+              "width": 1360,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "3:2",
+              "width": 2048,
+              "height": 1360
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "3:4",
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "4:3",
+              "width": 2048,
+              "height": 1536
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "4:5",
+              "width": 1632,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "5:4",
+              "width": 2048,
+              "height": 1632
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "9:16",
+              "width": 1152,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "16:9",
+              "width": 2048,
+              "height": 1152
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "21:9",
+              "width": 2048,
+              "height": 864
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "1:1",
+              "width": 2880,
+              "height": 2880
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "2:3",
+              "width": 2336,
+              "height": 3520
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "3:2",
+              "width": 3520,
+              "height": 2336
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "3:4",
+              "width": 2480,
+              "height": 3312
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "4:3",
+              "width": 3312,
+              "height": 2480
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "4:5",
+              "width": 2560,
+              "height": 3216
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "5:4",
+              "width": 3216,
+              "height": 2560
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "9:16",
+              "width": 2160,
+              "height": 3840
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "16:9",
+              "width": 3840,
+              "height": 2160
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "21:9",
+              "width": 3840,
+              "height": 1632
+            }
+          ],
+          "documentation": "https://docs.apiyi.com/api-capabilities/gpt-image-2-vip/overview"
+        },
+        {
+          "id": "gpt-image-2.5-vip",
+          "label": "gpt-image-2.5-vip",
+          "status": "active",
+          "adapter": "apiyi_vip_quality_v1",
+          "size_control": "size",
+          "supports_quality": true,
+          "quality_options": [
+            "low",
+            "medium",
+            "high",
+            "auto"
+          ],
+          "legacy_default_size": "1024x1024",
+          "size_presets": [
+            {
+              "tier": "1K",
+              "aspect_ratio": "1:1",
+              "width": 1280,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "2:3",
+              "width": 848,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "3:2",
+              "width": 1280,
+              "height": 848
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "3:4",
+              "width": 960,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "4:3",
+              "width": 1280,
+              "height": 960
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "4:5",
+              "width": 1024,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "5:4",
+              "width": 1280,
+              "height": 1024
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "9:16",
+              "width": 720,
+              "height": 1280
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "16:9",
+              "width": 1280,
+              "height": 720
+            },
+            {
+              "tier": "1K",
+              "aspect_ratio": "21:9",
+              "width": 1280,
+              "height": 544
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "1:1",
+              "width": 2048,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "2:3",
+              "width": 1360,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "3:2",
+              "width": 2048,
+              "height": 1360
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "3:4",
+              "width": 1536,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "4:3",
+              "width": 2048,
+              "height": 1536
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "4:5",
+              "width": 1632,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "5:4",
+              "width": 2048,
+              "height": 1632
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "9:16",
+              "width": 1152,
+              "height": 2048
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "16:9",
+              "width": 2048,
+              "height": 1152
+            },
+            {
+              "tier": "2K",
+              "aspect_ratio": "21:9",
+              "width": 2048,
+              "height": 864
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "1:1",
+              "width": 2880,
+              "height": 2880
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "2:3",
+              "width": 2336,
+              "height": 3520
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "3:2",
+              "width": 3520,
+              "height": 2336
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "3:4",
+              "width": 2480,
+              "height": 3312
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "4:3",
+              "width": 3312,
+              "height": 2480
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "4:5",
+              "width": 2560,
+              "height": 3216
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "5:4",
+              "width": 3216,
+              "height": 2560
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "9:16",
+              "width": 2160,
+              "height": 3840
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "16:9",
+              "width": 3840,
+              "height": 2160
+            },
+            {
+              "tier": "4K",
+              "aspect_ratio": "21:9",
+              "width": 3840,
+              "height": 1632
+            }
+          ],
+          "documentation": "https://docs.apiyi.com/api-capabilities/gpt-image-2-vip/overview"
+        }
+      ]
+    }
+  ]
+}
